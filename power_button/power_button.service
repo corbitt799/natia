@@ -1,0 +1,14 @@
+[Unit]
+Description=Power Button Service
+After=network.target
+ 
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/power_button.py
+WorkingDirectory=/usr/local/bin
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+ 
+[Install]
+WantedBy=multi-user.target
