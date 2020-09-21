@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 from time import sleep
 
 
 GPIO.setmode(GPIO.BCM)
-led_pin = 18
+led_pin = 16
 GPIO.setup(led_pin, GPIO.OUT)
 
 try:
