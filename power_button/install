@@ -2,13 +2,13 @@
 
 set -e
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/."
 
 echo "Installing power button script \n"
 sudo cp power_button.py /usr/local/bin/
 sudo chmod +x /usr/local/bin/power_button.py
 
-echo "Installing power button service...\n"
+echo "Installing power button service \n"
 sudo cp power_button.service /etc/systemd/system/power_button.service
 
 echo "Starting power button service \n"
