@@ -1,4 +1,4 @@
-# natia
+# NATIA
 
 hello.py is the initial script for learning python
 
