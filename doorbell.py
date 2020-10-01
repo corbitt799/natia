@@ -5,8 +5,8 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 #define variables to hold pin numbers
-button_pin=1
-buzzer_pin=2
+button_pin=5
+buzzer_pin=16
 
 #set warnings messages off
 GPIO.setwarnings(False)
