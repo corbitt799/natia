@@ -3,7 +3,7 @@
 from time import sleep
 
 def say_hello():
-    print("Hello world from inside of a function!")
+    print("Hello, World...from inside of a function!")
 
 
 print("We're about to call the say hello function")
