@@ -6,14 +6,16 @@ from time import sleep
 
 
 def fire_missile(channel):
-    GPIO.output(relay_pin, True)
-    sleep(2)
-    GPIO.output(relay_pin, False)
-
+    if GPIO.input(door_pin):
+        GPIO.output(relay_pin, False)
+        sleep(2)
+        GPIO.output(relay_pin, True)
+    else:
+        pass
 
 #define variables to hold pin numbers
 door_pin=5
-relay_pin=16
+relay_pin=12
 
 #set warnings messages off
 GPIO.setwarnings(False)
@@ -25,8 +27,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(door_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(relay_pin, GPIO.OUT)
 
+#set relay off initially
+GPIO.output(relay_pin, True)
+
 #add event detect for door opening
-GPIO.add_event_detect(door_pin, GPIO.FALLING, callback=fire_missile, bouncetime=200)
+GPIO.add_event_detect(door_pin, GPIO.RISING, callback=fire_missile, bouncetime=200)
 
 
 try:
