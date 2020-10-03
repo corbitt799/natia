@@ -26,5 +26,5 @@ try:
             GPIO.output(buzzer_pin, 0)          #set buzzer pin low/false/0
         sleep(.5)                               #sleep for .5 seconds
 except KeyboardInterrupt:
-    pass
     GPIO.cleanup()
+    pass

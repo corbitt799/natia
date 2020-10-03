@@ -5,23 +5,24 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 
-def arm_alarm(channel):
-    sleep(1)
-    if GPIO.input(arm_pin):
-        armed=True
-    else:
-        armed=False
+def arm_alarm(channel):                      #function to arm or disarm the alarm system
+    sleep(.3)                                #sleep a short period to allow the switch to settle before reading
+    if GPIO.input(arm_pin):                  #read switch pin and if it is True, meaning switch is turned on
+        armed=True                           #set the armed variable to True
+    else:                                    #else if the input from the arm pin is False, meaning the setich is turned off
+        armed=False                          #set the armed variable to False
 
-def sound_alarm(channel):
-    if armed:
-        GPIO.output(motion_pin, True)
-        for x in range(10):
-            GPIO.output(led_pin, True)
-            sleep(.5)
-            GPIO.output(led_pin, False)
-            sleep(.5)
-    else:
-        pass
+def sound_alarm(channel):                    #function to sound alarm
+    if armed:                                #if armed then proceed otherwise go to else
+        GPIO.output(buzzer_pin, True)        #set buzzer pin True or on
+        for x in range(10):                  #create for loop to cycle through range up to 10, LEDs will flash 10 times 
+            GPIO.output(led_pin, True)       #set LED True or on
+            sleep(.5)                        #sleep .5 seconds
+            GPIO.output(led_pin, False)      #set LED Fasle or off
+            sleep(.5)                        #sleep .5 seconds
+        GPIO.output(buzzer_pin, False)       #once LED flashing is complete set buzzer pin to False or off
+    else:                                    #else part of if else runs if armed is not True
+        pass                                 #pass or exit the function
 
 #define variables to hold pin numbers
 motion_pin=5

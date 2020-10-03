@@ -17,5 +17,5 @@ try:
         GPIO.output(led_pin, GPIO.LOW)
         sleep(.75)
 except KeyboardInterrupt:
-    pass
     GPIO.cleanup()
+    pass
