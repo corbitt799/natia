@@ -31,7 +31,7 @@ GPIO.setup(relay_pin, GPIO.OUT)
 GPIO.output(relay_pin, True)
 
 #add event detect for door opening
-GPIO.add_event_detect(door_pin, GPIO.RISING, callback=fire_missile, bouncetime=200)
+GPIO.add_event_detect(door_pin, GPIO.BOTH, callback=fire_missile, bouncetime=200)
 
 
 try:
