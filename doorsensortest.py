@@ -14,8 +14,8 @@ GPIO.setup(contact_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 while True:
     status=GPIO.input(contact_pin)
     if status==GPIO.HIGH:   #GPIO.HIGH can be replaced with True or 1
-        print("door open")
+        print("GPIO HIGH / door open")
     else:
-        print("door closed")
+        print("GPIO LOW / door closed")
     print(status)
     sleep(.25)

@@ -16,8 +16,8 @@ def arm_alarm(channel):                      #function to arm or disarm the alar
     print("System armed: ", armed)           #print armed status
 
 def sound_alarm(channel):                    #function to sound alarm
-    print("Motion Detected")                 #print function to help with troubleshooting
     if armed:                                #if armed then proceed otherwise go to else / no need for global as only reading variable
+        print("Motion Detected")             #print function to help with troubleshooting
         GPIO.output(buzzer_pin, True)        #set buzzer pin True or on
         for x in range(10):                  #create for loop to cycle through range up to 10, LEDs will flash 10 times 
             GPIO.output(led_pin, True)       #set LED True or on
