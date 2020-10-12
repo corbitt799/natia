@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+#Short script to help tune the motion sensor
+#Attach trigger of motion sensor to GPIO 5
+#Attach LED to GPIO 21
+#When the motion sensor triggers the LED with light and stay lit until the sensor no longer reports motion
+#Use this to set timing and sensitivity
 
 import RPi.GPIO as GPIO
 from time import sleep
