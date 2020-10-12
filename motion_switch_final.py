@@ -33,7 +33,7 @@ def sound_alarm(channel):                    #function to sound alarm
 motion_pin=5
 buzzer_pin=16
 led_pin=21
-arm_pin=17
+arm_pin=24
 
 #set warnings messages off
 GPIO.setwarnings(False)
