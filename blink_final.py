@@ -6,8 +6,10 @@ from time import sleep
 
 #set GPIO numbering / options are GPIO.BOARD or GPIO.BCM
 GPIO.setmode(GPIO.BCM)
+
 #define the pin number for the LED
 led_pin = 21
+
 #set the LED pin as an output
 GPIO.setup(led_pin, GPIO.OUT)
 

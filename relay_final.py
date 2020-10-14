@@ -7,7 +7,7 @@ from time import sleep
 
 def fire_missile(channel):               #define our function which is called when an event on door_pin is detected
     if GPIO.input(door_pin):             #double checking the door trigger, if True (open) then run:
-        GPIO.output(relay_pin, True)     #set relay pin HIGH/True to triggers relay
+        GPIO.output(relay_pin, True)     #set relay pin HIGH/True to trigger relay
         sleep(2)                         #sleep 2 seconds
         GPIO.output(relay_pin, False)    #set relay pin LOW/False to turn relay off
     else:                                #else of if test runs if door is not open
