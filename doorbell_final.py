@@ -23,13 +23,13 @@ GPIO.setup(buzzer_pin, GPIO.OUT)
 GPIO.output(buzzer_pin, 0)
 
 try:
-    print("Press button to sound buzzer")
+    print("Press button to sound buzzer")       #print function
     while True:                                 #start while loop
         if GPIO.input(button_pin)==False:       #if button is pressed / can also be just if 'GPIO.input(button_pin)'
             GPIO.output(buzzer_pin, 1)          #set buzzer pin high/true/1
         else:                                   #if button is not pressed
             GPIO.output(buzzer_pin, 0)          #set buzzer pin low/false/0
         sleep(.25)                              #sleep for .25 seconds
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    pass
+except KeyboardInterrupt:                       #exits try loop if CRT C is detected 
+    GPIO.cleanup()                              #reset GPIO pins
+    pass                                        #pass out of try loop and exit program
