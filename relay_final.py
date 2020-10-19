@@ -33,6 +33,7 @@ GPIO.output(relay_pin, False)
 #add event detect for door opening
 GPIO.add_event_detect(door_pin, GPIO.RISING, callback=fire_missile, bouncetime=200)
 
+print("GPIO setup complete...waiting for door trigger!")
 
 try:
     while True:
